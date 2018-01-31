@@ -80,7 +80,8 @@ keyfile /etc/mosquitto/certs/server.key
 require_certificate true
 use_identity_as_username true
 
-allow_anonymous false```
+allow_anonymous false
+```
 
 Restart the Mosquitto server:
 
