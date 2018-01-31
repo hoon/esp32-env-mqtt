@@ -1,0 +1,63 @@
+menu "esp32-env-mqtt configuration"
+
+config WIFI_SSID
+    string "WiFi SSID"
+    default "myssid"
+    help
+	SSID (network name) of the access point to connect to.
+
+config WIFI_PASSWORD
+    string "WiFi password"
+    default "mypassword"
+    help
+	WiFi password (WPA or WPA2) for the access point to connec to.
+	
+config BME280_READ_INTERVAL_SEC
+	int "BME280 sensor read interval (seconds)"
+	default 10
+	help
+	The interval (in seconds) at which BME280 sensor readings should be taken.
+	
+config BME280_I2C_ADDR
+	hex "BME280 I2C address"
+	default 0x76
+	help
+	I2C address of the BME280 module connected to your ESP32. It's usually 0x76 or 0x77.
+	
+config BME280_I2C_SDA_PIN
+	int "BME280 I2C SDA pin number"
+	default 21
+	help
+	The ESP32 pin number of the pin being used for the I2C SDA.
+	
+config BME280_I2C_SCL_PIN
+	int "BME280 I2C SCL pin number"
+	default 22
+	help
+	The ESP32 pin number of the pin being used for I2C SCL.
+	
+config MQTT_SERVER_HOST
+	string "MQTT server address"
+	default "mymqttserver"
+	help
+	The address of your MQTT server.
+	
+config MQTT_SERVER_PORT
+	int "MQTT server port"
+	default 8883
+	help
+	The port your MQTT server listens on.
+
+config MQTT_CLIENT_ID
+	string "MQTT client ID"
+	default "sensor-01"
+	help
+	The name your device will use to identify itself to the MQTT server.
+
+config MQTT_TOPIC
+	string "MQTT topic name"
+	default "env/room-01/sensor-01"
+	help
+	The MQTT topic to publish the sensor readings to.
+
+endmenu
